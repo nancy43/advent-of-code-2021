@@ -1,9 +1,9 @@
 const { puzzleInput } = require('./puzzle-input');
 function countMeasurements (){
     let count = 0;
-    for (let i = 0; i < puzzleInput.length; i++) {
+    for (let i = 0; i < puzzleInput.length-1; i++) {
         if (puzzleInput[i] < puzzleInput[i+1]) {
-            return true;
+            count++;
         }
     }
     console.log(count);
