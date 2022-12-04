@@ -1,7 +1,8 @@
 const { input } = require('./input');
 function finalPosition() {
-    let finalHorizontal = 0 ;
-    let finalDepth = 0;
+    let [finalHorizontal, finalDepth ] = [0,0];
+    // let finalHorizontal = 0 ;
+    // let finalDepth = 0;
     for (let { direction, value } of input) {
         if (direction === 'forward') {
             finalHorizontal += value;
