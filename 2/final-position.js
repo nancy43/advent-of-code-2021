@@ -13,8 +13,6 @@ function finalPosition() {
             finalDepth -= value;
         }
     }
-    console.log(finalHorizon)
-    console.log(finalDepth)
     console.log(finalHorizon * finalDepth)
 }
 finalPosition()
