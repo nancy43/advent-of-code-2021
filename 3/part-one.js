@@ -1,29 +1,37 @@
-const { input } = require('./input-3');
-let count = {};
-let epsilonRate = [];
-let gammaRate = [];
-for (let line of input) {
-    for (let i = 0; i < line.length; i++) {
-        if (!count[i]) {
-            // [count for zeros and ones]
-            count[i] = [0, 0];
+import  input from './input-3.js';
+let gammaRate = "";
+let epsilonRate = "";
+const length = input[0].length;
+export default function getCount(input) {
+    //count for number of zeros and ones
+    const countForZeros = Array(length).fill(0);
+    const countForOnes = Array(length).fill(0);
+    for (let line of input) {
+        const bits = [...line];
+        bits.forEach((bit, index) => {
+            if (bit === "0") {
+                countForZeros[index]++;
+            } else {
+                countForOnes[index]++;
+            }
+        });
+    }
+    return { countForZeros, countForOnes };
+}
+
+function powerConsumption (){
+    const { countForZeros, countForOnes } = getCount(input);
+    for (let i = 0; i < length; i++) {
+        let bit = 0;
+        if (countForOnes[i] > countForZeros[i]) {
+            bit = 1;
         }
-        let val = +line[i];
-        count[i][val]++;
+        gammaRate += bit;
+        epsilonRate += bit === 1 ? 0 : 1;
     }
-}
-
-for (let counts of Object.values(count)) {
-    if (counts[0] > counts[1]) {
-        gammaRate.push(0);
-        epsilonRate.push(1);
-    } else {
-        gammaRate.push(1);
-        epsilonRate.push(0);
-    }
-}
 //Converting to decimal
-let powerConsumption  = (parseInt(gammaRate.join(''), 2) * parseInt(epsilonRate.join(''), 2));
+let powerConsumption  = (parseInt(gammaRate, 2) * parseInt(epsilonRate, 2));
 console.log(powerConsumption)
-
+}
+powerConsumption()
 

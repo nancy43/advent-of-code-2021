@@ -1,31 +1,37 @@
-const { input } = require('./input-3');
-let count = {};
-function getCommonLeast(){
-    for (let line of input) {
-        for (let i = 0; i < line.length; i++) {
-            if (!count[i]) {
-                count[i] = [0, 0];
-            }
-            let val = +line[i];
-            count[i][val]++;
-        }
+import  input from './input-3.js';
+import getCount from './part-one.js';
+function getOxygenRating(input, index = 0) {
+    const { countForZeros, countForOnes } = getCount(input);
+    let mostCommonBit = "1";
+    if (countForZeros[index] > countForOnes[index]) {
+        mostCommonBit = "0";
     }
-}
-getCommonLeast()
-
-let mostCommon = [];
-let leastCommon = [];
-for (let counts of Object.values(count)) {
-    if (counts[0] > counts[1]) {
-        mostCommon.push(0);
-        leastCommon.push(1);
-    } else if (counts[0] === counts[1]) {
-        mostCommon.push(null);
-        leastCommon.push(null);
-    } else {
-        mostCommon.push(1);
-        leastCommon.push(0);
+    const filtered = input.filter((line) => line[index] === mostCommonBit);
+    if (filtered.length === 1) {
+        return filtered[0];
     }
+    return getOxygenRating(filtered, index + 1);
 }
 
+function getCO2Rating(input, index = 0) {
+    const { countForZeros, countForOnes } = getCount(input);
+    let leastCommonBit = "0";
+    if (countForZeros[index] > countForOnes[index]) {
+        leastCommonBit = "1";
+    }
+    const filtered = input.filter((line) => line[index] === leastCommonBit);
+    if (filtered.length === 1) {
+        return filtered[0];
+    }
+    return getCO2Rating(filtered, index + 1);
+}
+
+function getLifeSupportRating() {
+    const oxygenRating = getOxygenRating(input);
+    const CO2Rating = getCO2Rating(input);
+
+   let lifeSupportRating = (parseInt(oxygenRating, 2) * parseInt(CO2Rating, 2));
+    console.log(lifeSupportRating)
+}
+getLifeSupportRating()
 
