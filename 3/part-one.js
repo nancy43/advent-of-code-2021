@@ -23,9 +23,7 @@ for (let counts of Object.values(count)) {
     }
 }
 //Converting to decimal
-let decGammaRate = parseInt(gammaRate.join(''), 2)
-let decEpsilonRate = parseInt(epsilonRate.join(''), 2)
-let powerConsumption = decGammaRate * decEpsilonRate
+let powerConsumption  = (parseInt(gammaRate.join(''), 2) * parseInt(epsilonRate.join(''), 2));
 console.log(powerConsumption)
 
 
