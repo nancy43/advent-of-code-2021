@@ -18,5 +18,6 @@
   "homepage": "https://github.com/nancy43/advent-of-code-2021#readme",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "type": "module"
 }
