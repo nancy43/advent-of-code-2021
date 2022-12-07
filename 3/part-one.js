@@ -1,4 +1,4 @@
-import  input from './input-3.js';
+import  input from './day03-input.js';
 let gammaRate = "";
 let epsilonRate = "";
 const length = input[0].length;
@@ -31,7 +31,7 @@ function powerConsumption (){
     }
 //Converting to decimal
 let powerConsumption  = (parseInt(gammaRate, 2) * parseInt(epsilonRate, 2));
-console.log(powerConsumption)
+console.log("Power consumption of the submarine is:",powerConsumption)
 }
 powerConsumption()
 

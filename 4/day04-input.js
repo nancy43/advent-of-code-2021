@@ -4,11 +4,7 @@ import * as fs from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
-
 const input = fs
-    .readFileSync(path.join(__dirname, 'input-3.txt'), 'utf8')
-    .toString()
-    .trim()
-    .split('\n');
-
+    .readFileSync(path.join(__dirname, 'day04-input.txt'), 'utf8')
+    .toString();
 export default input;

@@ -1,4 +1,4 @@
-import  input from './input-3.js';
+import  input from './day03-input.js';
 import getCount from './part-one.js';
 function getOxygenRating(input, index = 0) {
     const { countForZeros, countForOnes } = getCount(input);
@@ -31,7 +31,7 @@ function getLifeSupportRating() {
     const CO2Rating = getCO2Rating(input);
 
    let lifeSupportRating = (parseInt(oxygenRating, 2) * parseInt(CO2Rating, 2));
-    console.log(lifeSupportRating)
+    console.log("The life support rating of the submarine is:",lifeSupportRating)
 }
 getLifeSupportRating()
 
