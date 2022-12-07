@@ -1,4 +1,4 @@
-const { puzzleInput } = require('./puzzle-input');
+import  puzzleInput from './day01-input.js';
 function slidingWindow (){
     let count = 0;
     for (let i = 0; i < puzzleInput.length-3; i++) {
@@ -8,6 +8,6 @@ function slidingWindow (){
            count ++;
        }
     }
-    console.log(count);
+    console.log("Sums larger than the previous sum:",count);
 }
 slidingWindow()

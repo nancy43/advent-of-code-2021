@@ -1,4 +1,4 @@
-const { puzzleInput } = require('./puzzle-input');
+import  puzzleInput from './day01-input.js';
 function countMeasurements (){
     let count = 0;
     for (let i = 0; i < puzzleInput.length-1; i++) {
@@ -6,6 +6,6 @@ function countMeasurements (){
             count++;
         }
     }
-    console.log(count);
+    console.log("Measurements larger than the previous measurement:",count);
 }
 countMeasurements()

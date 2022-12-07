@@ -1,4 +1,4 @@
-const { input } = require('./input');
+import  input from './day02-input.js';
 function submarine () {
     let [aim, finalHorizontal, finalDepth ] = [0,0,0];
     for (let { direction, value } of input) {
@@ -14,6 +14,6 @@ function submarine () {
             return false;
         }
     }
-    console.log(finalDepth * finalHorizontal);
+    console.log("Multiplied final horizontal position by final depth:",finalHorizontal*finalDepth );
 }
 submarine()

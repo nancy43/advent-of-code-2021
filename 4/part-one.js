@@ -1,4 +1,4 @@
-import input from './boards.js';
+import input from './day04-input.js';
 
     const [numsList, ...boardsList] = input.split('\n\n')
 

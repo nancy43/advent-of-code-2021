@@ -1,4 +1,4 @@
-const { input } = require('./input');
+import  input from './day02-input.js';
 function finalPosition() {
     let [finalHorizontal, finalDepth ] = [0,0];
     // let finalHorizontal = 0 ;
@@ -14,6 +14,6 @@ function finalPosition() {
             finalDepth -= value;
         }
     }
-    console.log(finalHorizontal * finalDepth)
+    console.log("Multiplied horizontal position by final depth:",finalHorizontal * finalDepth)
 }
 finalPosition()
