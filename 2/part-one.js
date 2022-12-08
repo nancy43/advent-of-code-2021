@@ -1,5 +1,5 @@
 import  input from './day02-input.js';
-function finalPosition() {
+export default function finalPosition() {
     let [finalHorizontal, finalDepth ] = [0,0];
     // let finalHorizontal = 0 ;
     // let finalDepth = 0;
@@ -15,5 +15,6 @@ function finalPosition() {
         }
     }
     console.log("Multiplied horizontal position by final depth:",finalHorizontal * finalDepth)
+    return finalHorizontal * finalDepth
 }
 finalPosition()

@@ -26,12 +26,13 @@ function getCO2Rating(input, index = 0) {
     return getCO2Rating(filtered, index + 1);
 }
 
-function getLifeSupportRating() {
+export default function getLifeSupportRating() {
     const oxygenRating = getOxygenRating(input);
     const CO2Rating = getCO2Rating(input);
 
    let lifeSupportRating = (parseInt(oxygenRating, 2) * parseInt(CO2Rating, 2));
     console.log("The life support rating of the submarine is:",lifeSupportRating)
+    return lifeSupportRating
 }
 getLifeSupportRating()
 

@@ -19,7 +19,7 @@ export default function getCount(input) {
     return { countForZeros, countForOnes };
 }
 
-function powerConsumption (){
+export function powerConsumption (){
     const { countForZeros, countForOnes } = getCount(input);
     for (let i = 0; i < length; i++) {
         let bit = 0;
@@ -32,6 +32,7 @@ function powerConsumption (){
 //Converting to decimal
 let powerConsumption  = (parseInt(gammaRate, 2) * parseInt(epsilonRate, 2));
 console.log("Power consumption of the submarine is:",powerConsumption)
+    return powerConsumption
 }
 powerConsumption()
 
