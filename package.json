@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "scripts": {
+      "test": "mocha --timeout 10000 'test/**/*.js'"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nancy43/advent-of-code-2021.git"
@@ -19,5 +19,8 @@
   "dependencies": {
     "express": "^4.18.2"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "mocha": "^10.1.0"
+  }
 }
